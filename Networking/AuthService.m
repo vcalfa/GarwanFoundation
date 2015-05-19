@@ -7,7 +7,6 @@
 //
 
 #import "AuthService.h"
-#import <NSURL+QueryDictionary/NSURL+QueryDictionary.h>
 
 @implementation AuthService
 
