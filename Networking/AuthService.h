@@ -7,10 +7,8 @@
 //
 
 #import "Service.h"
-#import "OAuthSessionManager.h"
+#import "AuthSessionManager.h"
 
-@interface TokenService : Service
-
-@property (nonatomic, strong) OAuthSessionManager *httpSessionManager;
+@interface AuthService : Service
 
 @end

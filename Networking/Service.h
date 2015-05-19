@@ -17,10 +17,8 @@ NSString *const kServiceVersion;
 @property (nonatomic, strong, readonly) NSString *serviceHost;
 @property (nonatomic, strong, readonly) NSString *serviceVersion;
 @property (nonatomic, strong, readonly) NSURL *baseURL;
-@property (nonatomic, strong) AFURLSessionManager *urlSessionManager;
 @property (nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
 
-- (NSString *)baseURLString;
-- (NSString *)serviceURLStringWithString:(NSString *)actionPath;
+- (instancetype)initWithBaseURL:(NSURL *)baseURL;
 - (void)stopAll;
 @end
