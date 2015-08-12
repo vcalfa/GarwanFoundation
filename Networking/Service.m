@@ -25,7 +25,7 @@
 
 - (void)setup
 {
-	self.httpSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.baseURL];
+	self.httpSessionManager = [[HTTPSessionManager alloc] initWithBaseURL:self.baseURL];
 	self.httpSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
 	self.httpSessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
 }
@@ -39,6 +39,11 @@
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setServiceErrorHandler:(id<SessionManagerErrorProtocol>)errorHandler
+{
+    ((HTTPSessionManager*)self.httpSessionManager).errorDelegate = errorHandler;
 }
 
 @end

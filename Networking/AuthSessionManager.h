@@ -9,6 +9,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import <AFOAuth2Manager/AFOAuth2Manager.h>
 #import <AFOAuth2Manager/AFHTTPRequestSerializer+OAuth2.h>
+#import "HTTPSessionManager.h"
+
 typedef void (^OAuthCompletitionBlock)(BOOL success);
 
 @class AuthSessionManager;
@@ -24,7 +26,7 @@ typedef void (^OAuthCompletitionBlock)(BOOL success);
 
 @end
 
-@interface AuthSessionManager : AFHTTPSessionManager
+@interface AuthSessionManager : HTTPSessionManager
 
 @property (nonatomic, weak) id <AuthSessionManager> delegate;
 

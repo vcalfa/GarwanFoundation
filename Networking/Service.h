@@ -8,17 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
-
-NSString *const kServiceHost;
-NSString *const kServiceVersion;
+#import "HTTPSessionManager.h"
 
 @interface Service : NSObject
 
-@property (nonatomic, strong, readonly) NSString *serviceHost;
-@property (nonatomic, strong, readonly) NSString *serviceVersion;
 @property (nonatomic, strong, readonly) NSURL *baseURL;
-@property (nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
+@property (nonatomic, strong) HTTPSessionManager *httpSessionManager;
 
 - (instancetype)initWithBaseURL:(NSURL *)baseURL;
 - (void)stopAll;
+- (void)setServiceErrorHandler:(id<SessionManagerErrorProtocol>)errorHandler;
+
 @end
